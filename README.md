@@ -13,6 +13,7 @@ This week's Challenge requires you to modify starter code to create an applicati
 This application uses the language JavaScript to generate a random password based on the user's criterias such as : how many characters they want in the password, if they want to include uppercase characters, lowercase characters, numbers, or special characters. Clicking on the generate password button will activate the prompts to which the user answers, and a password will appear in the box.
 
 Link to the deployed application
+https://dianaanguyen.github.io/password-generator/
 
 Screenshot of the application
 <img width="959" alt="Screen Shot 2022-10-17 at 12 27 23 PM" src="https://user-images.githubusercontent.com/111664734/196265300-6320ee88-6300-4fc0-a7a0-f8d0b30fadd7.png">
