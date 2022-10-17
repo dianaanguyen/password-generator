@@ -5,6 +5,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  var userCriteria; // used to store arrays of criteria choices combines
 
   passwordText.value = password;
 
@@ -28,5 +29,21 @@ function generatePassword () {
   var useSpecialChars = prompt ("Would you like to include special characters? Type 1 for yes and 0 for no.")
 } 
 if (passwordLength <= 7 || passwordLength >= 129 ){
-    alert ("You did not type in s number between 8 and 128, please choose again. ")
+    alert ("You did not type in a number between 8 and 128, please choose again. ")
+    return generatePassword()
   }
+
+if (useUpperCase === "0" && useLowercase === "0" && useNumbers === "0" && useSpecialChars === "0") {
+  alert ("You have to choose at least one criteria. Please try again."); 
+} else if (useUpperCase === "1" && useLowercase === "1" && useNumbers === "1" && useSpecialChars === "1") {
+  userCriteria = uppercase.concat(lowercase, numbers, special);
+} else if (useUpperCase === "1" && useLowercase === "1") {
+  userCriteria = uppercase.concat(lowercase);
+} else if (useUpperCase ==="1" && useNumbers === "1") {
+  userCriteria = uppercase.concat(numbers);
+} else if (useUpperCase === "1" && useSpecialChars === "1") {
+  userCriteria = uppercase.concat(special);
+} else if (useLowercase === "1" && useNumbers === "1") {
+  userCriteria = lowercase.concat(numbers);
+}
+}
