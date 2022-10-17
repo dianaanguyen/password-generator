@@ -45,5 +45,30 @@ if (useUpperCase === "0" && useLowercase === "0" && useNumbers === "0" && useSpe
   userCriteria = uppercase.concat(special);
 } else if (useLowercase === "1" && useNumbers === "1") {
   userCriteria = lowercase.concat(numbers);
+} else if (useNumbers === "1" && useSpecialChars === "1") {
+  userCriteria = numbers.concat(special);
+} else if (useUpperCase === "1" && useLowercase === "1" && useNumbers === "1"){
+  userCriteria = uppercase.concat(lowercase, numbers);
+} else if (useUpperCase === "1" && useLowercase === "1" && useSpecialChars === "1"){
+  userCriteria = uppercase.concat(lowercase, special);
+} else if (useLowercase === "1" && useNumbers === "1" && useSpecialChars === "1") {
+  userCriteria = lowercase.concat(numbers, special);
+} else if (useSpecialChars === "1" && useNumbers === "1" && useUpperCase === "1") {
+  userCriteria = special.concat(numbers, uppercase);
+} else if (useUpperCase === "1") {
+  userCriteria = uppercase;
+} else if (useLowercase === "1") {
+  userCriteria = lowercase;
+} else if (useNumbers === "1") {
+  userCriteria = numbers;
+} else if (useSpecialChars === "1") {
+  userCriteria = special;
 }
+
+var newPassword = []; 
+for (var i =0; i < passwordLength; i ++) {
+  var pickChoices = userCriteria[Math.floor (Math.random() * userCriteria)];
+  newPassword.push(pickChoices);
 }
+var joinPassword = newPassword.join("");
+return joinPassword;
